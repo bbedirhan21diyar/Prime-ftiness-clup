@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d16">
+<meta name="description" content="Prime Fitness Club Ergani. Modern spor salonu, kardiyo, kişisel antrenman ve üyelik paketleri.">
+<title>Prime Fitness Club | Ergani</title>
+<style>
+:root {
+  --blue: #087cff;
+  --bg: #080d16;
+  --card: #111a29;
+  --text: #f4f7ff;
+  --muted: #aab8cc;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.container { width: 90%; max-width: 1150px; margin: auto; }
+header {
+  background: #090e17;
+  border-bottom: 1px solid #24334a;
+  padding: 18px 0;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.logo { font-size: 25px; font-weight: 900; font-style: italic; }
+.logo small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+.links { display: flex; gap: 18px; flex-wrap: wrap; }
+.links a:hover { color: #36a0ff; }
+.btn {
+  display: inline-block;
+  padding: 12px 19px;
+  background: var(--blue);
+  border-radius: 7px;
+  font-weight: bold;
+  border: 1px solid var(--blue);
+}
+.btn:hover { background: #0066d9; }
+.btn.outline { background: transparent; }
+.hero {
+  padding: 90px 0;
+  min-height: 440px;
+  background:
+    linear-gradient(90deg, #080d16 10%, #080d16df 48%, #071a32a8),
+    radial-gradient(ellipse at 80% 30%, #1265b9, #080d16 65%);
+  border-bottom: 1px solid #20334b;
+}
+.eyebrow {
+  color: #42a6ff;
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-size: 13px;
+}
+h1 {
+  font-size: clamp(43px, 8vw, 82px);
+  line-height: .98;
+  margin: 20px 0;
+  font-weight: 900;
+}
+h1 span { color: var(--blue); }
+.hero p { max-width: 550px; color: #c1cede; font-size: 18px; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #25344a;
+  border-bottom: 1px solid #25344a;
+}
+.feature { background: #0b111c; padding: 23px 18px; }
+.feature .icon { font-size: 28px; color: #2695ff; }
+.feature h3 { margin: 7px 0; font-size: 17px; }
+.feature p { color: var(--muted); font-size: 14px; margin: 0; }
+section { padding: 70px 0; }
+.heading { text-align: center; margin-bottom: 35px; }
+.heading h2 { font-size: clamp(30px, 5vw, 45px); margin: 8px 0; }
+.heading p { color: var(--muted); }
+.packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card {
+  background: linear-gradient(145deg, #142136, #0b111b);
+  border: 1px solid #263c58;
+  border-radius: 12px;
+  padding: 25px;
+}
+.card h3 { font-size: 22px; }
+.label {
+  color: #79c1ff;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.price { font-size: 36px; font-weight: 900; color: white; }
+.price small { font-size: 14px; color: var(--muted); }
+.card p, .card li { color: #c0ccdc; }
+.card ul { padding-left: 20px; margin-bottom: 25px; }
+.student {
+  margin-top: 25px;
+  padding: 23px;
+  background: #0c2340;
+  border: 1px solid #1766ad;
+  border-radius: 10px;
+}
+.student h3 { margin-top: 0; }
+.about { background: #0c121e; }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+}
+.about h2 { font-size: 36px; line-height: 1.15; }
+.muted { color: var(--muted); }
+.gym-art {
+  min-height: 300px;
+  border-radius: 14px;
+  border: 1px solid #23518a;
+  background:
+    linear-gradient(135deg, #05101eaa, #05101e99),
+    repeating-linear-gradient(90deg, #102b4c 0 3px, #070d17 3px 65px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.gym-art strong { font-size: 42px; font-style: italic; }
+.gym-art span { display: block; letter-spacing: 6px; font-size: 12px; }
+.hours {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.hour {
+  padding: 22px;
+  background: var(--card);
+  border: 1px solid #26364b;
+  border-radius: 10px;
+}
+.hour p { color: var(--muted); margin-bottom: 0; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.contact-card {
+  background: var(--card);
+  border: 1px solid #26364b;
+  padding: 25px;
+  border-radius: 12px;
+}
+.contact-card p { overflow-wrap: anywhere; }
+.contact-card b { color: #6bbaff; }
+footer {
+  padding: 25px 0;
+  border-top: 1px solid #26364b;
+  color: var(--muted);
+  font-size: 13px;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+@media(max-width: 760px) {
+  .links { width: 100%; justify-content: space-between; gap: 8px; font-size: 13px; }
+  .features { grid-template-columns: 1fr 1fr; }
+  .packages, .about-grid, .contact-grid, .hours { grid-template-columns: 1fr; }
+  .hero { padding: 65px 0; }
+  section { padding: 50px 0; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#anasayfa">PRIME
+        <small>FITNESS CLUB</small>
+      </a>
+      <div class="links">
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#uyelik">Üyelik</a>
+        <a href="#iletisim">İletişim</a>
+      </div>
+      <a class="btn" href="https://wa.me/905360689190">WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="anasayfa">
+  <div class="container">
+    <div class="eyebrow">PRIME FITNESS CLUB · ERGANİ</div>
+    <h1>DAHA GÜÇLÜ<br><span>BİR SEN.</span></h1>
+    <p>Hedeflerine odaklan, sınırlarını keşfet.
+    Modern ekipmanlar, kardiyo alanı ve sana uygun
+    antrenman seçenekleriyle harekete geç.</p>
+    <div class="actions">
+      <a class="btn" href="#uyelik">ÜYELİK PAKETLERİ →</a>
+      <a class="btn outline" href="#iletisim">BİZE ULAŞ</a>
+    </div>
+  </div>
+</section>
+
+<div class="features container" id="hizmetler">
+  <div class="feature">
+    <div class="icon">↗</div>
+    <h3>Kardiyo Alanı</h3>
+    <p>Bisiklet ve kardiyo ekipmanları.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">✣</div>
+    <h3>Kişisel Antrenman</h3>
+    <p>Hedeflerine uygun çalışma programları.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">✦</div>
+    <h3>Beslenme Danışmanlığı</h3>
+    <p>Beslenme konusunda destek ve danışmanlık.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">◆</div>
+    <h3>Öğrenci İndirimi</h3>
+    <p>Öğrencilere özel avantajlar.</p>
+  </div>
+</div>
+
+<section id="uyelik">
+  <div class="container">
+    <div class="heading">
+      <div class="eyebrow">HEDEFİNİ BELİRLE</div>
+      <h2>Üyelik Paketleri</h2>
+      <p>Sana uygun paketi seç, ilk adımını bugün at.</p>
+    </div>
+
+    <div class="packages">
+      <article class="card">
+        <div class="label">AYLIK PAKET</div>
+        <h3>1 Aylık Üyelik</h3>
+        <div class="price">1.500 ₺</div>
+        <p>Antrenman rutinine başlamak isteyenlere.</p>
+        <ul>
+          <li>Spor salonu kullanımı</li>
+          <li>Kardiyo alanı</li>
+          <li>Öğrenci indirimi hakkında bilgi</li>
+        </ul>
+        <a class="btn" href="https://wa.me/905360689190?text=Merhaba%2C%20ayl%C4%B1k%20%C3%BCyelik%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">Paketi Sor</a>
+      </article>
+
+      <article class="card">
+        <div class="label">AVANTAJLI PAKET</div>
+        <h3>3 Aylık Üyelik</h3>
+        <div class="price">3.500 ₺</div>
+        <p>Düzenli çalışma alışkanlığı kazanmak isteyenlere.</p>
+        <ul>
+          <li>3 aylık üyelik</li>
+          <li>Kardiyo alanı</li>
+          <li>Öğrenci indirimi hakkında bilgi</li>
+        </ul>
+        <a class="btn" href="https://wa.me/905360689190?text=Merhaba%2C%203%20ayl%C4%B1k%20%C3%BCyelik%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">Paketi Sor</a>
+      </article>
+
+      <article class="card">
+        <div class="label">KİŞİYE ÖZEL</div>
+        <h3>Özel Ders</h3>
+        <div class="price">Bilgi Al</div>
+        <p>Kişisel antrenman ve özel ders seçenekleri.</p>
+        <ul>
+          <li>Kişisel antrenman programı</li>
+          <li>Gençlere yönelik kurslar</li>
+          <li>Beslenme danışmanlığı</li>
+        </ul>
+        <a class="btn" href="https://wa.me/905360689190?text=Merhaba%2C%20%C3%B6zel%20dersler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">Bilgi Al</a>
+      </article>
+    </div>
+
+    <div class="student">
+      <h3>🎓 Öğrencilere Özel İndirim</h3>
+      <p>İndirim oranını ve koşullarını öğrenmek için bizimle iletişime geç.</p>
+      <a class="btn" href="https://wa.me/905360689190?text=Merhaba%2C%20%C3%B6%C4%9Frenci%20indirimi%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim%3F">İndirimi Sor</a>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="container about-grid">
+    <div>
+      <div class="eyebrow">HAKKIMIZDA</div>
+      <h2>Gücünü keşfet.<br><span style="color:#087cff">Kendine yatırım yap.</span></h2>
+      <p class="muted">Prime Fitness Club olarak sağlıklı ve aktif
+      bir yaşam hedefinde sana eşlik ediyoruz. Modern ekipmanlar,
+      kardiyo alanı, kişisel antrenman programları ve motivasyon
+      dolu bir çalışma ortamı sunuyoruz.</p>
+      <p>Protein ürünleri mevcuttur. Ürün ve fiyat bilgisi için salonla iletişime geçebilirsin.</p>
+    </div>
+    <div class="gym-art">
+      <div><strong>PRIME</strong><span>FITNESS CLUB</span><p>DAHA GÜÇLÜ BİR SEN İÇİN</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="saatler">
+  <div class="container">
+    <div class="heading">
+      <div class="eyebrow">BİZİ ZİYARET ET</div>
+      <h2>Çalışma Saatleri</h2>
+    </div>
+    <div class="hours">
+      <div class="hour">
+        <strong>Hafta içi</strong>
+        <p>10:00 – 23:00</p>
+      </div>
+      <div class="hour">
+        <strong>Pazar</strong>
+        <p>11:00 – 17:00</p>
+      </div>
+    </div>
+    <p class="muted">Cumartesi çalışma saati belirtilmediği için eklenmemiştir.</p>
+  </div>
+</section>
+
+<section id="iletisim">
+  <div class="container">
+    <div class="heading">
+      <div class="eyebrow">İLETİŞİM</div>
+      <h2>Harekete Geçmeye Hazır mısın?</h2>
+      <p>Üyelik ve hizmetler hakkında bilgi almak için bize ulaş.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Prime Fitness Club</h3>
+        <p><b>Telefon / WhatsApp</b><br>
+        <a href="tel:+905360689190">0536 068 91 90</a></p>
+        <p><b>Adres</b><br>
+        Dicle, Kıralan Dink 9. Sokak 3BA,<br>
+        21950 Ergani / Diyarbakır</p>
+        <a class="btn" href="https://wa.me/905360689190">WhatsApp'tan Yaz</a>
+      </div>
+      <div class="contact-card">
+        <h3>Konum</h3>
+        <p class="muted">Yol tarifi almak için adresi haritada aç.</p>
+        <a class="btn outline"
+        href="https://www.google.com/maps/search/?api=1&query=Ergani%20Diyarbakir"
+        target="_blank" rel="noopener">Google Haritalar ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <span>© <span id="year"></span> Prime Fitness Club</span>
+    <span>Ergani · Diyarbakır</span>
+  </div>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
